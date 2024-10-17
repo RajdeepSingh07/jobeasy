@@ -1,0 +1,106 @@
+{% extends 'navbar.html' %}
+{% block css %}
+<style>
+body,
+html {
+margin: 0;
+padding: 0;
+font-family: 'Roboto Mono', monospace;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+width: 100%;
+height: 100%;
+--color: #a748f5;
+background: linear-gradient(95deg, var(--color) 25%, transparent 25%) -50px 0,
+linear-gradient(-15deg, var(--color) 25%, transparent 25%) -50px 0,
+linear-gradient(25deg, transparent 75%, var(--color) 75%) -50px 0,
+linear-gradient(-45deg, transparent 75%, var(--color) 75%) -50px 0,
+linear-gradient(-15deg, transparent 75%, var(--color) 75%) -50px 0;
+background-color: #b669fd;
+background-size: 40px 40px;
+padding-top: 7vh;
+}
+body{
+overflow-x: hidden;
+}
+.container {
+background: rgba(255, 255, 255, 0.35);
+background: rgba(255, 255, 255, 0.5);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
+border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.18);
+max-width: 1200px;
+margin: 5vh auto;
+padding: 20px;
+flex: 1;
+color: black;
+/* Ensures the container takes up all the space available, pushing the footer down */
+}
+
+h1,
+h2 {
+color: #000;
+font-weight: bold;
+/* Solid black for headings and bold */
+}
+
+p {
+line-height: 1.6;
+/* Solid black for text */
+margin-bottom: 20px;
+}
+
+ul li {
+color: #000;
+/* Solid black for list items */
+}
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Welcome to JobEasy</h1>
+    <p>At JobEasy, we are dedicated to bridging the gap between talented professionals and innovative tech
+        companies. Our platform is designed specifically for the technology sector, offering a comprehensive job
+        search experience tailored to the needs of both job seekers and employers.</p>
+</div>
+<div class="container">
+    <h2>Our Services</h2>
+    <p><strong>Tech Job Listings</strong><br>
+        Explore a wide range of job opportunities in the technology industry. From software development and data
+        science to UX/UI design and AI/ML engineering, our curated listings connect you with top companies looking
+        for your skills.</p>
+
+    <p><strong>Job Counselling Chatbot</strong><br>
+        Navigating the job market can be challenging. Our intelligent job counselling chatbot is here to assist you
+        every step of the way. Whether you need help refining your resume, preparing for interviews, or
+        understanding industry trends, our chatbot provides personalized guidance to enhance your job search
+        journey.</p>
+</div>
+<div class="container">
+    <h2>Our Mission</h2>
+    <p>Our mission is to empower tech professionals by providing them with the tools and resources they need to
+        succeed in their careers. We aim to create a seamless and efficient job search process, enabling users to
+        find opportunities that align with their skills and aspirations.</p>
+</div>
+<div class="container">
+    <h2>Why Choose JobEasy?</h2>
+    <ul>
+        <li><strong>Specialized Focus</strong><br>
+            We concentrate exclusively on the tech industry, ensuring that our job listings and resources are
+            relevant and up-to-date with the latest industry demands.</li>
+        <li><strong>Personalized Assistance</strong><br>
+            Our job counselling chatbot offers tailored advice and support, helping you make informed decisions and
+            improve your job search strategies.</li>
+        <li><strong>Community and Support</strong><br>
+            Join a community of like-minded professionals and access a wealth of knowledge and support to advance
+            your career.</li>
+    </ul>
+</div>
+
+{% endblock %}

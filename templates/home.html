@@ -1,0 +1,132 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block css %}
+<style>
+  body, h1, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+  }
+
+  * {
+    box-sizing: inherit; /* Inherit box-sizing from body */
+  }
+
+  body {
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Hide horizontal overflow */
+  }
+
+  main {
+    padding-top: 60px; /* Adjust this value based on your header height */
+  }
+  
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    min-height: 400px; /* Adjusted height */
+    max-width: 100vw; /* Prevents section from exceeding the viewport width */
+    overflow-x: hidden; /* Additional safeguard against overflow */
+  }
+
+  .section .content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Ensures child elements stack vertically */
+    align-items: center; /* Centers child elements horizontally */
+  }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Overlay with 50% opacity */
+    z-index: 1;
+  }
+
+  .section h1 {
+    margin-bottom: 10px;
+    font-size: 36px; /* Increased font size */
+    display: block; /* Ensures it takes full width and stacks vertically */
+  }
+
+  .section p {
+    font-size: 20px; /* Increased font size */
+    margin-bottom: 20px;
+    display: block; /* Ensures it takes full width and stacks vertically */
+  }
+  a {
+    color: white; /* Set text color to white */
+    font-size: 36px; /* Set a larger font size like a heading */
+    font-weight: bold; /* Make it bold to resemble a heading */
+    text-decoration: none; /* Remove the default underline of the link */
+    display: block; /* Ensure it behaves like a block element */
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<body>
+  <main>
+    <section id="find-jobs" class="section">
+        <div class="content">
+            <a href="{% url 'findjob' %}">Find Your Dream Job</a>
+            <p>Explore thousands of job listings from top companies.</p>
+        </div>
+    </section>
+    <section id="chatbot" class="section">
+        <div class="content">
+            <a href="{% url 'chatbot' %}">ChatBot</a>
+            <p>Gain some expert advice from our AI Guru.</p>
+        </div>
+    </section>
+    <section id="about-us" class="section">
+      <div class="content">
+        <a href="{% url 'aboutus' %}">About Us</a>
+        <p>Learn more about our mission and values.</p>
+    </div>
+    </section>
+    <section id="our-team" class="section">
+      <div class="content">
+        <a href="{% url 'contactus' %}">Our Team</a>
+        <p>Meet the people behind JobSearch.</p>
+    </div>
+    </section>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section');
+
+      sections.forEach((section) => {
+        if (section.id === 'find-jobs') {
+          section.style.backgroundImage = "url('/static/JobEasy/findjobbg.png')";
+        } else if (section.id === 'chatbot') {
+          section.style.backgroundImage = "url('/static/JobEasy/chatbotbg.png')";
+        } else if (section.id === 'about-us') {
+          section.style.backgroundImage = "url('/static/JobEasy/aboutusbg.png')";
+        } else if (section.id === 'our-team') {
+          section.style.backgroundImage = "url('/static/JobEasy/ourteambg.png')";
+        }
+      });
+    });
+  </script>
+</body>
+{% endblock %}

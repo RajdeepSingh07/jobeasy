@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search - Login</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("{% static 'JobEasy/bgimgauth.jpeg' %}");
+    background-size: cover;
+    background-position: center;
+}
+.login-container {
+    background-color: rgba(55, 53, 53, 0); /* Adding transparency to the background color */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px; /* Adjust this value to your preference */
+}
+h2 {
+    -webkit-background-clip: text; /* Safari/Chrome */
+    background-clip: text;
+    color: white;
+    margin-bottom: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+.input {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: none; /* Remove border */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-size: 16px;
+    font-weight: 600;
+    color: #333; /* Dark font color */
+    padding: 10px 15px; /* Add some padding */
+    outline: none;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    margin-bottom: 15px;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .input::placeholder {
+    color: #666; /* Lighter font color for placeholder */
+    opacity: 0.8;
+  }
+
+  .input:focus {
+    background-color: rgba(45, 140, 240, 0.2); /* Light blue background color on focus */
+    box-shadow: 0 0 10px rgba(45, 140, 240, 0.4); /* Increased shadow on focus */
+  }
+.btn {
+    padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+  font-family: 'Roboto Mono', monospace;
+   }
+
+   .btn:hover {
+    letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+   }
+
+   .btn:active {
+    letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+   }
+
+p {
+    margin-top: 20px;
+    color: #000000;
+    font-family: 'Roboto Mono', monospace;
+}
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input class="input" id="username" name="username" placeholder="Enter your username" required>
+            <br>
+            <input type="password" class="input" id="pass" name="pass" placeholder="Enter your password" required>
+            <br>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Are you a new user? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+    </div>
+</body>
+</html>
